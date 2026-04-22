@@ -15,7 +15,6 @@ public class UserService {
     public UserService(UserRepository repo) {
         this.repo = repo;
     }
-
     public User create(User s) {
         return repo.save(s);
     }
@@ -35,7 +34,23 @@ public class UserService {
         return repo.save(existing);
     }
 
+    public User patch(Long id, User s) {
+        User existing = repo.findById(id).orElseThrow();
+        if (s.getName() != null) {
+             existing.setName(s.getName());
+        }
+        if(s.getEmail() != null) {
+             existing.setEmail(s.getEmail());
+        }
+        return repo.save(existing);
+    }
+
     public void delete(Long id) {
         repo.deleteById(id);
+    }
+    
+    public boolean validateUser(String username, String password) {
+        // DB check
+        return true;
     }
 }
