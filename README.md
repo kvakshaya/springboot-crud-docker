@@ -2,9 +2,7 @@
 RESTful Microservice for CRUD Operations (Spring Boot + MySQL + Docker)
 
 ## Tech Stack
-- Spring Boot
-- MySQL
-- Docker
+- Java, Spring Boot, Spring Security, JWT, MySQL, Docker, Redis, REST API, JPA/Hibernate, Maven
 
 ## Features
 - CRUD APIs
